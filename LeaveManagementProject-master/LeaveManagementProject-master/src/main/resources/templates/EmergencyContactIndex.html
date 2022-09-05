@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Emergency Contacts</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+<div class="center">
+  <h1 class="text-center">Emergency Contacts</h1>
+  <br>
+  <table class="table table-hover table-stripped">
+    <thead>
+    <td scope="col">Contact</td>
+    <td scope="col">Relation</td>
+    </thead>
+    <tbody>
+    <tr scope="row" th:each = "emergencyContacts : ${emergencyContacts}">
+      <td scope="col" th:text="${emergencyContacts.phone}"></td>
+      <td scope="col" th:text="${emergencyContacts.relation}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

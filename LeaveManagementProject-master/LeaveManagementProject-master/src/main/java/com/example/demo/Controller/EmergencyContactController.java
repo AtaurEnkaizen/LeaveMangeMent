@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -21,10 +22,18 @@ public class EmergencyContactController {
     @Autowired
     private EmployeeService employeeService;
 
+    @GetMapping("/all/{id}")
+    public String Index(@PathVariable("id") int id, Model model)
+    {
+        List<EmergencyContactModel> emergencyContactModels = emergencyContactService.getAllEmergencyContacts(id);
+        model.addAttribute("emergencyContacts", emergencyContactModels);
+        return "EmergencyContactIndex";
+    }
     @GetMapping("/add/{id}")
     public String NewEmergencyContactForm(@PathVariable("id") int id, Model model){
         model.addAttribute("emergencyContact", new EmergencyContactModel());
-        model.addAttribute("employeeId", id);
+        EmployeeModel employeeModel = new EmployeeModel(id);
+        model.addAttribute("employee", employeeModel);
         return "AddNewEmergencyContact";
     }
 
@@ -33,6 +42,6 @@ public class EmergencyContactController {
     {
         emergencyContactModel.setEmployeeModel(new EmployeeModel(id));
         emergencyContactService.addEmergencyContact(emergencyContactModel);
-        return "EmployeeIndex";
+        return "redirect:/employees/all";
     }
 }

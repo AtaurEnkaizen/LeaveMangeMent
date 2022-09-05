@@ -7,10 +7,7 @@ import com.example.demo.Service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -46,5 +43,9 @@ public class EmployeeController {
     @GetMapping("/addEmergency/{id}")
     public String NewEmergencyContactForm(@PathVariable("id") int id, Model model){
         return "redirect:/emergency/add/{id}";
+    }
+    @GetMapping("/viewEmergency/{id}")
+    public String ViewEmergencyContact(@PathVariable("id") int id, Model model){
+        return "redirect:/emergency/all/{id}";
     }
 }

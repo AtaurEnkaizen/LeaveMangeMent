@@ -114,4 +114,18 @@ public class EmployeeModel {
         this.departmentModel = departmentModel;
         this.designationModel = designationModel;
     }
+
+    @Override
+    public String toString() {
+        return "EmployeeModel{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", contact_no='" + contact_no + '\'' +
+                ", is_active=" + is_active +
+                ", departmentModel=" + departmentModel +
+                ", designationModel=" + designationModel +
+                ", emergencyContactModels=" + emergencyContactModels +
+                '}';
+    }
 }

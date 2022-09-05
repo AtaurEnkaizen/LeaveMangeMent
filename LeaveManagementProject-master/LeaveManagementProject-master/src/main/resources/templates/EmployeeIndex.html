@@ -10,6 +10,7 @@
 <div class="center">
     <h1 class="text-center">Employee Table</h1>
     <br>
+    <a class="btn btn-dark" th:href="@{/employees/add}">Add new Employee</a>
     <table class="table table-hover table-stripped">
         <thead>
         <td scope="col">Name</td>
@@ -28,7 +29,10 @@
             <td scope="col" th:text="${employees.address}"></td>
             <td scope="col" th:text="${employees.contact_no}"></td>
             <td scope="col" th:text="${employees.id}"></td>
-            <td scope="col"> <a th:href="@{/addEmergency/{id}(id = ${employees.id})}">Add Emergency Contacts</a></td>
+            <td scope="col">
+                <a th:href="@{/viewEmergency/{id}(id = ${employees.id})}">View Emergency Contacts</a>
+                <a th:href="@{/addEmergency/{id}(id = ${employees.id})}">Add Emergency Contacts</a>
+            </td>
         </tr>
         </tbody>
     </table>
