@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="center">
-    <form action="#" th:action="@{/emergency/add/{id}(id = ${employeeId}}" th:object="${emergencyContact}" method="post">
+    <form action="#" th:action="@{/emergency/add/{id}(id = ${employee.id})}" th:object="${emergencyContact}" method="post">
         <p>Contact: <input type="text" th:field="*{phone}" /></p>
         <p>Relation: <input type="text" th:field="*{relation}"/></p>
         <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
