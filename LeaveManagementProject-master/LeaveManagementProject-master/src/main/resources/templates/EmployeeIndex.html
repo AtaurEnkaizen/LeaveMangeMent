@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Employees Index</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+<div class="center">
+    <h1 class="text-center">Employee Table</h1>
+    <br>
+    <table class="table table-hover table-stripped">
+        <thead>
+        <td scope="col">Name</td>
+        <td scope="col">Department</td>
+        <td scope="col">Designation</td>
+        <td scope="col">Address</td>
+        <td scope="col">Contact</td>
+        <td scope="col">ID</td>
+        <td scope="col">Emergency Contact</td>
+        </thead>
+        <tbody>
+        <tr scope="row" th:each = "employees : ${employees}">
+            <td scope="col" th:text="${employees.name}"></td>
+            <td scope="col" th:text="${employees.departmentModel.title}"></td>
+            <td scope="col" th:text="${employees.designationModel.title}"></td>
+            <td scope="col" th:text="${employees.address}"></td>
+            <td scope="col" th:text="${employees.contact_no}"></td>
+            <td scope="col" th:text="${employees.id}"></td>
+            <td scope="col"> <a th:href="@{/addEmergency/{id}(id = ${employees.id})}">Add Emergency Contacts</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
