@@ -1,6 +1,7 @@
 package com.example.demo.Service;
 
 import com.example.demo.Model.DepartmentModel;
+import com.example.demo.Model.RoleModel;
 import com.example.demo.Repository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,5 +19,11 @@ public class DepartmentService implements IDepartmentService{
     @Override
     public void addDepartments(DepartmentModel departmentModel) {
         departmentRepository.save(departmentModel);
+    }
+
+    @Override
+    public DepartmentModel findDepartmentByTitle(String title) {
+        DepartmentModel departmentModel =  departmentRepository.findByTitle(title);
+        return departmentModel;
     }
 }

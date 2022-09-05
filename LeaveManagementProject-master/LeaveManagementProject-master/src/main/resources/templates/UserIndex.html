@@ -14,13 +14,13 @@
     <thead>
     <td scope="col">Id</td>
     <td scope="col">Email</td>
-    <td scope="col">Role Model Id</td></tr>
+    <td scope="col">Role Name</td></tr>
     </thead>
     <tbody>
     <tr scope="row" th:each = "users : ${users}">
       <td scope="col" th:text="${users.id}"></td>
       <td scope="col" th:text="${users.email}"></td>
-      <td scope="col" th:text="${users.roleModel.id}"></td>
+      <td scope="col" th:text="${users.roleModel.title}"></td>
     </tr>
     </tbody>
   </table>

@@ -20,4 +20,9 @@ public class DesignationService implements IDesignationService{
     public void addDesignations(DesignationModel designationModel) {
         designationRepository.save(designationModel);
     }
+
+    @Override
+    public DesignationModel findDesignationByTitle(String title) {
+        return designationRepository.findByTitle(title);
+    }
 }
