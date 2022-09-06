@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <style>
+.dropdown {
+     position: relative;
+     display: inline-block;
+}
+.button {
+     padding: 10px 30px;
+     font-size: 15px;
+}
+#list-items {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 185px;
+}
+#list-items a {
+     display: block;
+     font-size: 18px;
+     background-color: #ddd;
+     color: black;
+     text-decoration: none;
+     padding: 10px;
+}
+  </style>
+</head>
+<body>
+<div th:fragment="navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Leave Management System</a>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/employees/all">Employees</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/designations/all">Profile</a>
+        </li>
+        <li class="nav-item dropdown">
+          <div class="dropdown">
+            <button onclick="show_hide()" class="button">Menu</button>
+              <div id="list-items">
+                <a href="/departments/all"> Departments </a>
+                <a href="/designations/all"> Designations </a>
+                <a href="/roles/all"> Roles </a>
+              </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<script>
+      function show_hide() {
+         var click = document.getElementById("list-items");
+         if(click.style.display ==="none") {
+            click.style.display ="block";
+         } else {
+            click.style.display ="none";
+         }
+      }
+</script>
+</body>
+</html>

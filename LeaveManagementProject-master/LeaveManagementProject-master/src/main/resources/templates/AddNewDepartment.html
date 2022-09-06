@@ -8,6 +8,7 @@
 </head>
 <body>
 <div class="center">
+  <div th:insert="fragments/navbar :: navbar"></div>
   <form action="#" th:action="@{/departments/add}" th:object="${newDepartment}" method="post">
     <p>Department Title: <input type="text" th:field="*{title}" /></p>
     <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>

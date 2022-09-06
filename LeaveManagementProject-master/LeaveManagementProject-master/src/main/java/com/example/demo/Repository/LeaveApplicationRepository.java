@@ -1,9 +1,9 @@
 package com.example.demo.Repository;
 
-import com.example.demo.Model.UserModel;
+import com.example.demo.Model.LeaveApplicationModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<UserModel, Long> {
+public interface LeaveApplicationRepository extends JpaRepository<LeaveApplicationModel, Long> {
 }
