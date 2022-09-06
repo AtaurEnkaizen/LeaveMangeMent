@@ -8,6 +8,7 @@
 </head>
 <body>
 <div class="center">
+  <div th:insert="fragments/navbar :: navbar"></div>
   <form action="#" th:action="@{/employees/add}" th:object="${newEmployee}" method="post">
     <p>Employee Name: <input type="text" th:field="*{name}" /></p>
     <p>Employee Department: <input type="text" th:field="*{departmentModel.title}" /></p>

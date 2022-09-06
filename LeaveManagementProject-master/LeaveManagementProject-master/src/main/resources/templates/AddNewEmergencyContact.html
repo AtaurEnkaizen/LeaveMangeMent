@@ -8,6 +8,7 @@
 </head>
 <body>
 <div class="center">
+    <div th:insert="fragments/navbar :: navbar"></div>
     <form action="#" th:action="@{/emergency/add/{id}(id = ${employee.id})}" th:object="${emergencyContact}" method="post">
         <p>Contact: <input type="text" th:field="*{phone}" /></p>
         <p>Relation: <input type="text" th:field="*{relation}"/></p>
