@@ -1,5 +1,8 @@
 package com.example.demo.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -43,6 +46,7 @@ public class DesignationModel {
         this.title = title;
     }
 
+    @JsonManagedReference
     public Set<EmployeeModel> getEmployees() {
         return employees;
     }
