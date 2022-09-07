@@ -1,5 +1,7 @@
 package com.example.demo.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Optional;
 
@@ -45,6 +47,7 @@ public class EmergencyContactModel {
         this.relation = relation;
     }
 
+    @JsonBackReference
     public EmployeeModel getEmployeeModel() {
         return employeeModel;
     }

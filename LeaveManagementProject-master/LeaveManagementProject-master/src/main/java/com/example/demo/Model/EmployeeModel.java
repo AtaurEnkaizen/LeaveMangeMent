@@ -1,5 +1,8 @@
 package com.example.demo.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -72,7 +75,7 @@ public class EmployeeModel {
     public void setIs_active(boolean is_active) {
         this.is_active = is_active;
     }
-
+    @JsonBackReference
     public DepartmentModel getDepartmentModel() {
         return departmentModel;
     }
@@ -81,6 +84,7 @@ public class EmployeeModel {
         this.departmentModel = departmentModel;
     }
 
+    @JsonBackReference
     public DesignationModel getDesignationModel() {
         return designationModel;
     }
@@ -89,6 +93,7 @@ public class EmployeeModel {
         this.designationModel = designationModel;
     }
 
+    @JsonManagedReference
     public Set<EmergencyContactModel> getEmergencyContactModels() {
         return emergencyContactModels;
     }
